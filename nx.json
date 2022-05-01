@@ -1,10 +1,10 @@
 {
-  "npmScope": "demoportals",
+  "npmScope": "ioniconf",
   "affected": {
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nstudio/xplat"
   },
   "implicitDependencies": {
     "package.json": {
@@ -22,7 +22,9 @@
           "lint",
           "test",
           "e2e"
-        ]
+        ],
+        "parallel": 1,
+        "useDaemonProcess": false
       }
     }
   },

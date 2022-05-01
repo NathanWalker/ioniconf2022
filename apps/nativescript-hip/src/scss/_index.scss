@@ -1,0 +1,43 @@
+@import 'variables';
+
+// app specific styles here ... (import other scss files or define as needed)
+Page {
+  background-color: $background;
+}
+.font-hip {
+  // font-family: 'Fugaz One', 'FugazOne-Regular';
+  // font-weight: 400;
+
+  font-family: "Imperator", "Imperator Bold";
+  font-weight: 700;
+}
+.font-hip-normal {
+  font-family: "Imperator", "Imperator";
+  font-weight: 400; 
+}
+
+.ion {
+  font-family: 'Ionicons', 'ionicons';
+  font-weight: 400;
+  color: white;
+}
+
+.list-group {
+  background-color: $background;
+}
+
+.gradient-brand {
+  background: linear-gradient(to bottom, rgba(225, 10, 10, 0.6), #e10a0a);
+}
+
+.gradient-brand-inverse {
+  background: linear-gradient(to bottom, rgb(225, 10, 10), rgba(225, 10, 10, .6));
+}
+
+.hip-btn {
+  background: linear-gradient(to bottom, rgb(225, 10, 10), rgba(225, 10, 10, .4));
+  border-radius: 6;
+  color: white;
+  font-size: 22;
+  padding: 15;
+}

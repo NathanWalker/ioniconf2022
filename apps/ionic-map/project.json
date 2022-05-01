@@ -1,0 +1,207 @@
+{
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  },
+  "sourceRoot": "apps/ionic-map/src",
+  "prefix": "ioniconf",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "apps/ionic-map/www",
+        "index": "apps/ionic-map/src/index.html",
+        "main": "apps/ionic-map/src/main.ts",
+        "polyfills": "apps/ionic-map/src/polyfills.ts",
+        "tsConfig": "apps/ionic-map/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/ionic-map/src/assets",
+            "output": "assets"
+          },
+          {
+            "glob": "**/*.svg",
+            "input": "node_modules/ionicons/dist/ionicons/svg",
+            "output": "./svg"
+          }
+        ],
+        "styles": [
+          {
+            "input": "apps/ionic-map/src/theme/variables.scss"
+          },
+          {
+            "input": "apps/ionic-map/src/global.scss"
+          }
+        ],
+        "scripts": [],
+        "aot": false,
+        "vendorChunk": true,
+        "extractLicenses": false,
+        "buildOptimizer": false,
+        "sourceMap": true,
+        "optimization": false,
+        "namedChunks": true
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ionic-map/src/environments/environment.ts",
+              "with": "apps/ionic-map/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            }
+          ]
+        },
+        "dev": {
+          "fileReplacements": [
+            {
+              "replace": "libs/xplat/core/src/lib/environments/environment.ts",
+              "with": "apps/ionic-map/src/environments/environment.ts"
+            }
+          ]
+        },
+        "android": {
+          "outputPath": "apps/nativescript-hip/App_Resources/Android/src/main/assets/webMapPortal"
+        },
+        "ios": {
+          "outputPath": "apps/nativescript-hip/App_Resources/iOS/webMapPortal"
+        },
+        "ci": {
+          "progress": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "ionic-map:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "ionic-map:build:production"
+        },
+        "dev": {
+          "browserTarget": "ionic-map:build:dev"
+        },
+        "ci": {
+          "progress": false
+        }
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ionic-map:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/ionic-map/src/test.ts",
+        "polyfills": "apps/ionic-map/src/polyfills.ts",
+        "tsConfig": "apps/ionic-map/tsconfig.spec.json",
+        "karmaConfig": "apps/ionic-map/karma.conf.js",
+        "styles": [],
+        "scripts": [],
+        "assets": [
+          {
+            "glob": "favicon.ico",
+            "input": "apps/ionic-map/src/",
+            "output": "/"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/ionic-map/src/assets",
+            "output": "/assets"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "progress": false,
+          "watch": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@angular-eslint/builder:lint",
+      "options": {
+        "tsConfig": ["apps/ionic-map/tsconfig.app.json", "apps/ionic-map/tsconfig.spec.json", "apps/ionic-map/e2e/tsconfig.json"],
+        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+      }
+    },
+    "ionic-cordova-build": {
+      "executor": "@ionic/angular-toolkit:cordova-build",
+      "options": {
+        "browserTarget": "ionic-map:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "ionic-map:build:production"
+        }
+      }
+    },
+    "ionic-cordova-serve": {
+      "executor": "@ionic/angular-toolkit:cordova-serve",
+      "options": {
+        "cordovaBuildTarget": "ionic-map:ionic-cordova-build",
+        "devServerTarget": "ionic-map:serve"
+      },
+      "configurations": {
+        "production": {
+          "cordovaBuildTarget": "ionic-map:ionic-cordova-build:production",
+          "devServerTarget": "ionic-map:serve:production"
+        }
+      }
+    },
+    "sync": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["npx cap sync"],
+        "parallel": false,
+        "cwd": "apps/ionic-map"
+      }
+    },
+    "open.ios": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["npx cap open ios"],
+        "parallel": false,
+        "cwd": "apps/ionic-map"
+      }
+    },
+    "open.android": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["npx cap open android"],
+        "parallel": false,
+        "cwd": "apps/ionic-map"
+      }
+    },
+    "clean": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["npx rimraf node_modules www plugins package-lock.json yarn.lock", "yarn"],
+        "parallel": false,
+        "cwd": "apps/ionic-map"
+      }
+    }
+  }
+}

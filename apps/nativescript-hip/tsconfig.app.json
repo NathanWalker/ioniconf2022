@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": []
+  },
+  "include": ["./typings/*.d.ts", "./src/features/native-views/*.ts", "../../libs/xplat/core/src/lib/environments/base/*.ts", "./src/environments/environment.*.ts"],
+  "files": ["./references.d.ts", "./src/main.ts", "./src/polyfills.ts"]
+}

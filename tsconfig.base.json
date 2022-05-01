@@ -13,8 +13,21 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ioniconf/xplat/core": ["libs/xplat/core/src/index.ts"],
+      "@ioniconf/xplat/environments": ["libs/xplat/core/src/lib/environments/base/index.ts"],
+      "@ioniconf/xplat/features": ["libs/xplat/features/src/index.ts"],
+      "@ioniconf/xplat/ionic/core": ["libs/xplat/ionic/core/src/index.ts"],
+      "@ioniconf/xplat/ionic/features": ["libs/xplat/ionic/features/src/index.ts"],
+      "@ioniconf/xplat/nativescript/core": ["libs/xplat/nativescript/core/src/index.ts"],
+      "@ioniconf/xplat/nativescript/features": ["libs/xplat/nativescript/features/src/index.ts"],
+      "@ioniconf/xplat/nativescript/utils": ["libs/xplat/nativescript/utils/src/index.ts"],
+      "@ioniconf/xplat/utils": ["libs/xplat/utils/src/index.ts"],
+      "@ioniconf/xplat/web/core": ["libs/xplat/web/core/src/index.ts"],
+      "@ioniconf/xplat/web/features": ["libs/xplat/web/features/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

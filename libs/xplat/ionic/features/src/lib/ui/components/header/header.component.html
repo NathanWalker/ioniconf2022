@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ title }}
+    </ion-title>
+    <ion-buttons *ngIf="rightButton" slot="end">
+      <ion-button (click)="tappedRight.emit()">
+        <ion-icon slot="icon-only" class="ion-icons" [name]="rightButton"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

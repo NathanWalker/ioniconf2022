@@ -1,0 +1,8 @@
+<GridLayout rows="auto" backgroundColor="#e10a0a" verticalAlignment="bottom" height="455" borderRadius="25 25 0 0">
+  <ng-template [ngIf]="!ready">
+    <ActivityIndicator busy="true" [width]="uiService.isAndroid ? 50 : 100" [height]="uiService.isAndroid ? 50 : 100" class="activity-indicator h-center v-top m-t-10"></ActivityIndicator>
+  </ng-template>
+  <ng-template [ngIf]="ready">
+    <IonicPortal id="webMapPortal" class="w-full h-full" (loaded)="loaded($event)" backgroundColor="#e10a0a" iosOverflowSafeArea="true"></IonicPortal>
+  </ng-template>
+</GridLayout>

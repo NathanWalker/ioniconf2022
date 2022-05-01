@@ -1,0 +1,1 @@
+pod 'CapacitorGoogleMaps', :path => '../../../ionic-map/node_modules/@capacitor/google-maps'

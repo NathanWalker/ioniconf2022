@@ -1,94 +1,70 @@
+# Ioniconf 2022 ~ Opening doors with Portals
 
+This repo demonstrates a diverse development combining different language skills from different engineering departments to deliver app features on time by utilizing the best of all a diverse team has to offer without sacrificing or recreating their work.
 
-# Demoportals
+The resulting app deployment consists of a iOS/Android app, `HipPortals`, consuming:
 
-This project was generated using [Nx](https://nx.dev).
+* Swift work done by an iOS team
+* Java work done by an Android team
+* [@capacitor/google-maps](https://capacitorjs.com/docs/apis/google-maps) work done by a web team by utilizing [Portals](https://ionic.io/portals) via [@nativescript/ionic-portals](https://docs.nativescript.org/plugins/ionic-portals.html)
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+## Run the app
 
-🔎 **Smart, Fast and Extensible Build System**
+Prerequisites:
+* node 16+, npm 7+
+* [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+* [nativescript](https://www.npmjs.com/package/nativescript) 8.2+
+* To use the Google Maps SDK on any platform, API keys associated with an account with billing enabled are required. These can be obtained from the [Google Cloud Console](https://console.cloud.google.com/). This is required for all three platforms, Android, iOS, and JavaScript. Additional information about obtaining these API keys can be found in the [Google Maps documentation](https://developers.google.com/maps/documentation/android-sdk/overview) for each platform.
+* Find/replace `<ios-google-maps-key>` with your own.
+* Find/replace `<android-google-maps-key>` with your own.
+* Must be run on an actual physical device for iOS if using Mac M1 (due to Google Maps ommission of arm64 sim binaries)
+* Find/replace `<portal-api-key>` with your own, [can get on here](https://ionic.io/portals).
 
-## Adding capabilities to your workspace
+1. Install workspace dependencies
+```
+yarn
+```
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+2. Build Ionic Portal for use:
+```
+// ios:
+yarn nx run ionic-map:build:ios
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+// android:
+yarn nx run ionic-map:build:android
+```
 
-Below are our core plugins:
+3. Run NativeScript app:
+```
+// ios:
+yarn nx run nativescript-hip:ios
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+// android:
+yarn nx run nativescript-hip:android
+```
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+## Notes
 
-## Generate an application
+Development made efficient by [Nx workspace](https://nx.dev).
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+Technologies used:
 
-> You can use any of the plugins above to generate applications as well.
+* [Ionic](https://ionic.io/)
+* [Capacitor](https://capacitorjs.com/)
+* [Portals](https://ionic.io/portals)
+* [NativeScript](https://nativescript.org)
+* [Swift](https://developer.apple.com/swift/)
+* [Java](https://dev.java/)
+* [Angular](https://angular.io/)
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+Plugins used:
 
-## Generate a library
+* [@capacitor/google-maps](https://capacitorjs.com/docs/apis/google-maps)
+* [@nativescript/ionic-portals](https://docs.nativescript.org/plugins/ionic-portals.html)
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+Credits:
 
-> You can also use any of the plugins above to generate libraries as well.
+* [Swift HamzaGhazouani/HGRippleRadarView](https://github.com/HamzaGhazouani/HGRippleRadarView)
+* [Java TristateAndroidTeam/radarview](https://github.com/TristateAndroidTeam/radarview)
 
-Libraries are shareable across libraries and applications. They can be imported from `@demoportals/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+Created by Nathan Walker of [nStudio](https://nstudio.io) for [Ioniconf 2022](https://ionic.io/ioniconf).

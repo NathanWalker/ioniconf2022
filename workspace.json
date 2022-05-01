@@ -1,4 +1,21 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "ionic-map": "apps/ionic-map",
+    "nativescript-hip": "apps/nativescript-hip",
+    "xplat-core": "libs/xplat/core",
+    "xplat-features": "libs/xplat/features",
+    "xplat-ionic-core": "libs/xplat/ionic/core",
+    "xplat-ionic-features": "libs/xplat/ionic/features",
+    "xplat-ionic-scss": "libs/xplat/ionic/scss",
+    "xplat-nativescript-core": "libs/xplat/nativescript/core",
+    "xplat-nativescript-features": "libs/xplat/nativescript/features",
+    "xplat-nativescript-scss": "libs/xplat/nativescript/scss",
+    "xplat-nativescript-utils": "libs/xplat/nativescript/utils",
+    "xplat-scss": "libs/xplat/scss",
+    "xplat-utils": "libs/xplat/utils",
+    "xplat-web-core": "libs/xplat/web/core",
+    "xplat-web-features": "libs/xplat/web/features",
+    "xplat-web-scss": "libs/xplat/web/scss"
+  }
 }

@@ -33,7 +33,17 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+.angular
+yarn.lock
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# Capacitor testing
+apps/ionic-map/ios
+
+# Portal build artifacts
+webMapPortal
+
+      

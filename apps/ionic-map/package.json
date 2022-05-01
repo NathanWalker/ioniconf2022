@@ -1,0 +1,18 @@
+{
+  "name": "map",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "version": "0.0.0",
+  "dependencies": {
+    "@capacitor/app": "~1.0.2",
+    "@capacitor/android": "^3.0.0",
+    "@capacitor/core": "^3.0.0",
+    "@capacitor/google-maps": "~1.0.0",
+    "@capacitor/haptics": "~1.0.2",
+    "@capacitor/ios": "^3.0.0",
+    "@capacitor/keyboard": "~1.0.2",
+    "@capacitor/status-bar": "~1.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^3.0.0"
+  }
+}

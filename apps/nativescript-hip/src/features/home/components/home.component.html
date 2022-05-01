@@ -1,0 +1,21 @@
+<GridLayout rows="auto,*,*,auto" columns="*">
+  <StackLayout>
+    <StackLayout class="p-20 gradient-brand" iosOverflowSafeArea="true">
+      <Label [text]="'title' | translate" class="h1 text-center c-white font-hip" [class.p-t-20]="uiService.isAndroid" [translateY]="uiService.isAndroid ? 8 : 0"></Label>
+    </StackLayout>
+  </StackLayout>
+  <FinderView row="1" width="300" height="300" [marginTop]="uiService.isAndroid ? 40 : 0"></FinderView>
+  <ListView row="2" [items]="spots" (itemTap)="openSpot($event)" (itemLoading)="onItemLoading($event)" class="list-group" [marginTop]="uiService.isAndroid ? 30 : 0">
+    <ng-template let-item="item" let-odd="odd" let-even="even">
+      <GridLayout columns="*,auto">
+        <Label [text]="item.title" class="list-group-item v-center" color="#fff"></Label>
+        <GridLayout col="1" width="75" height="50">
+          <Button [text]="'ion-ios-close' | fonticon" class="ion t-25 v-center text-center" backgroundColor="transparent" (tap)="removeSpot(item)" width="70" height="50" [visibility]="item.title === 'Madison, WI' ? 'hidden' : 'visible'"></Button>
+        </GridLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+  <StackLayout row="3" class="p-15 gradient-brand-inverse">
+    <Button [text]="'report-spot' | translate" (tap)="openMap()" class="hip-btn font-hip"></Button>
+  </StackLayout>
+</GridLayout>

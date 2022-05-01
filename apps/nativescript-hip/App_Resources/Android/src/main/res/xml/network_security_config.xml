@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <base-config cleartextTrafficPermitted="true">
+    <trust-anchors>
+      <certificates src="system" />
+      <certificates src="user" />
+    </trust-anchors>
+  </base-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">localhost</domain>
+    <domain includeSubdomains="true">cloudfront.net</domain>
+    <domain includeSubdomains="true">googleusercontent.com</domain>
+    <domain includeSubdomains="true">placeholder.com</domain>
+    <domain includeSubdomains="true">sweet.io</domain>
+    <domain includeSubdomains="true">restcountries.eu</domain>
+    <domain includeSubdomains="true">countryflags.io</domain>
+  </domain-config>
+</network-security-config>
+
+
